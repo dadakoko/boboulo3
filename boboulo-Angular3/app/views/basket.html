@@ -1,0 +1,75 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">Basket</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>Basket</h3>
+               <hr>
+            </div>
+        </div>
+        <div class="row row-content">
+            <div class="col-xs-12" ng-if="!showCompany">
+                <h3>{{message}}</h3>
+            </div>
+            <div class="col-xs-12" ng-if="showCompany">
+                 <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right"
+                    type="button">
+                    {{showDetails ? 'Hide Details':'Show Details'}}
+                </button>
+                 <button ng-click="toggleFavorites()" class="btn btn-xs btn-primary pull-right"
+                    type="button">
+                    {{showFavorites ? 'Hide Apply Button':'Show Apply Button'}}
+                </button>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"
+                    ng-class="{active:isSelected(1)}">
+                    <a ng-click="select(1)"
+                     aria-controls="all"
+                    role="tab">The Basket</a></li>
+                    <li role="presentation"
+                    ng-class="{active:isSelected(2)}">
+                    <a ng-click="select(2)"
+                    aria-controls="appetizers"
+                     role="tab">School</a></li>
+                    <li role="presentation"
+                    ng-class="{active:isSelected(3)}">
+                    <a ng-click="select(3)"
+                     aria-controls="mains"
+                     role="tab">Bank</a></li>
+                    <li role="presentation"
+                    ng-class="{active:isSelected(4)}">
+                    <a  ng-click="select(4)"
+                     aria-controls="desserts"
+                     role="tab">Security</a></li>
+                </ul>
+             
+                <div class="tab-content">
+               <ul class="media-list tab-pane fade in active">
+                <li class="media" ng-repeat="company in companies | filter:filtText">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.companydetails({id: company._id})">
+                        <img class="media-object img-thumbnail"
+                        ng-src={{company.image}} alt="company">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{company.name}}</h2>
+                        <p ng-show="showDetails">{{company.description}}</p>
+                         <button  ng-show="showFavorites" ng-click="addToFavorites(company._id)" class="btn btn-xs btn-default pull-right"
+                    type="button">
+                          <i class="fa fa-heart"></i>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+
+            </div>
+            </div>
+        </div>
+
+    </div>

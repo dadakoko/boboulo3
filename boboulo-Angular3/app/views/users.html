@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-9">
+            <h2>The Users</h2>
+            <ul class="media-list">
+                <li class="media" ng-repeat="user in users">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.userdetails({id: user.id})">
+                            <img class="media-object img-thumbnail" ng-src={{user.picture}} on-error-src="images/user1.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">{{user.firstname}} {{user.lastname}}</h3>
+                        <p>{{user.username}}</p>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            <p style="padding:20px;"></p>
+        </div>
+    </div>
+</div>

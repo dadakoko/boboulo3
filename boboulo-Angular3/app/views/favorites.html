@@ -1,0 +1,79 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Applications</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>My Applications</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col-xs-12" ng-if="!showCompany">
+            <h3>{{message}}</h3>
+        </div>
+        <div class="col-xs-12" ng-if="showCompany">
+            <button ng-click="toggleDetails()" class="btn btn-xs btn-primary pull-right" type="button">
+                    {{showDetails ? 'Hide Details':'Show Details'}}
+                </button>
+            <button ng-click="toggleDelete()" class="btn btn-xs btn-primary pull-right" type="button">
+                    {{showDelete ? 'Hide Delete Button':'Show Delete Button'}}
+                </button>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" ng-class="{active:isSelected(1)}">
+                    <a ng-click="select(1)" aria-controls="all companies" role="tab">The basket</a></li>
+                <li role="presentation" ng-class="{active:isSelected(2)}">
+                    <a ng-click="select(2)" aria-controls="school" role="tab">School</a></li>
+                <li role="presentation" ng-class="{active:isSelected(3)}">
+                    <a ng-click="select(3)" aria-controls="Bank" role="tab">Bank</a></li>
+                <li role="presentation" ng-class="{active:isSelected(4)}">
+                    <a ng-click="select(4)" aria-controls="security" role="tab">security</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <ul class="media-list tab-pane fade in active">
+                    <li class="media" ng-repeat="company in companies | filter:filtText">
+                        <div class="media-left media-middle">
+                            <a ui-sref="app.companydetails({id: company._id})">
+                                <img class="media-object img-thumbnail" ng-src={{company.image}} alt="Uthappizza">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h2 class="media-heading">{{company.name}}</h2>
+                            <p ng-show="showDetails">{{company.description}}</p>
+                            <button ng-show="showDelete" ng-click="deleteFavorite(company._id)" class="btn btn-xs btn-danger pull-right" type="button">
+                          <i class="fa fa-remove"></i>
+                        </button>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="row row-content">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-markers 
+                fit="true" 
+                models="map.markers" 
+                coords="'self'" 
+                icon="'icon'" 
+                events="map.markersEvents"
+                options="'options'"
+                idKey="'idKey'">
+            </ui-gmap-markers>
+            <ui-gmap-window 
+                show="map.window.show" 
+                coords="map.window.model" 
+                options="map.window.options" 
+                closeClick="map.window.closeClick()">
+                    <img class="media-object img-thumbnail" ng-src={{map.window.model.src}}>
+            </ui-gmap-window>
+        </ui-gmap-google-map>
+    </div>
+
+
+</div>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bobouloApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head 
+         content must come *after* these tags -->
+
+    <title>boboulo</title>
+    <!-- Bootstrap -->
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../bower_components/ng-dialog/css/ngDialog.min.css" rel="stylesheet">
+    <link href="../bower_components/ng-dialog/css/ngDialog-theme-plain.min.css" rel="stylesheet">
+    <link href="../bower_components/ng-dialog/css/ngDialog-theme-default.min.css" rel="stylesheet">
+    <link href="styles/bootstrap-social.css" rel="stylesheet">
+    <link href="styles/mystyles.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        /*
+        .my-drop-zone {
+            border: dotted 3px lightgray;
+        }
+        
+        .nv-file-over {
+            border: dotted 3px red;
+        }
+        
+        .another-file-over-class {
+            border: dotted 3px green;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        canvas {
+            background-color: #f3f3f3;
+            -webkit-box-shadow: 3px 3px 3px 0 #e3e3e3;
+            -moz-box-shadow: 3px 3px 3px 0 #e3e3e3;
+            box-shadow: 3px 3px 3px 0 #e3e3e3;
+            border: 1px solid #c3c3c3;
+            height: 100px;
+            margin: 6px 0 0 6px;
+        }
+        */
+    </style>
+
+
+</head>
+
+<body>
+
+    <div ui-view="header"></div>
+
+    <div ui-view="content"></div>
+
+    <div ui-view="footer"></div>
+
+
+    <!-- build:js scripts/main.js -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="../bower_components/ng-dialog/js/ngDialog.min.js"></script>
+    <script src="../bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+ <!--   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYj2iKavbAlzSI1qSDyJJRI8u5LrcGYrw"></script>-->
+
+    <script src='../bower_components/lodash/lodash.js'></script>
+    <script src='../bower_components/angular-simple-logger/dist/angular-simple-logger.js'></script>
+    <script src='../bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+
+    <!-- for no html5 browsers support -->
+    <script src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="../bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+    <!--thumbnails for images-->
+    <script src="scripts/directives.js"></script>
+    <!-- endbuild -->
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+               <ul class="breadcrumb">
+                   <li><a href="index.html">Home</a></li>
+                   <li class="active">About Us</li>
+               </ul>
+            </div>
+            <div class="col-xs-12">
+               <h3>About Us</h3>
+               <hr>
+            </div>
+        </div>
+        
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-8">
+                <h2>Our History</h2>
+                  <p>Started in 2016, during an unemployed period!</p>
+                <div class="well">
+                    <blockquote>
+                        <p>A skilled worker, regardless of the job description, remains a treasure.</p>
+                        <footer>Madeleine M. Kunin</footer>
+                    </blockquote>                
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Facts At a Glance</h3>
+                    </div>
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Started</dt>
+                            <dd>May. 2016</dd>
+                            <dt>Employees</dt>
+                            <dd>1</dd>
+                       </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+                <h2>The team</h2>
+               <ul class="media-list">
+                <li class="media" ng-repeat="leader in leaders">
+                    <div class="media-left media-middle">
+                        <a>
+                        <img class="media-object img-thumbnail"
+                        ng-src={{leader.image}} alt="Peter Pan">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">{{leader.name}}
+                        <small>{{leader.designation}}</small></h3>
+                        <p>{{leader.description}}</p>
+                    </div>
+                </li>
+            </ul>
+
+            </div>
+             <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+            </div>
+       </div>
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-9">
+                <h2>Facts &amp; Figures</h2>
+                <div class="table-responsive">
+                <table class="table table-striped">
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <th>
+                            2013
+                        </th>
+                        <th>
+                            2014
+                        </th>
+                        <th>
+                            2015
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            Members
+                        </th>
+                        <td>
+                            15
+                        </td>
+                        <td>
+                            30
+                        </td>
+                        <td>
+                            40
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <th>
+                            Special Events
+                        </th>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            20
+                        </td>
+                        <td>
+                            45
+                        </td>
+                    
+                    </tr>
+                </table>
+                </div>
+            </div>
+             <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+            </div>
+       </div> 
+    </div>

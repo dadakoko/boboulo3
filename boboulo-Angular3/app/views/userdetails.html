@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#/users">Users</a></li>
+                <li class="active">User Details</li>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <h3>User Details</h3>
+            <hr>
+        </div>
+    </div>
+    <div class="row row-content">
+        <div class="col-xs-12 col-sm-9">
+            <h2>The Selected User</h2>
+            <div class="col-xs-12" ng-if="showUser">
+                <button class="btn btn-xs btn-primary pull-right" type="button" ui-sref="app.users">
+                    Back to Users
+                </button>
+                <div class="media">
+                    <div class="media-left media-middle">
+                        <a>
+                            <img class="media-object img-thumbnail" ng-src={{user.picture}} on-error-src="images/user1.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">{{user.firstname}} {{user.lastname}}</h3>
+                        <p>{{user.username}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-xs-12 col-sm-3">
+            <p style="padding:20px;"></p>
+        </div>
+
+
+    </div>
+    <div class="row row-content">
+        <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+            <ui-gmap-markers 
+                fit="true" 
+                models="map.markers" 
+                coords="'self'" 
+                icon="'icon'" 
+                events="map.markersEvents"
+                options="'options'"
+                idKey="'idKey'">
+            </ui-gmap-markers>
+            <ui-gmap-window 
+                show="map.window.show" 
+                coords="map.window.model" 
+                options="map.window.options" 
+                closeClick="map.window.closeClick()">
+                    <img class="media-object img-thumbnail" ng-src={{map.window.model.src}}>
+            </ui-gmap-window>
+        </ui-gmap-google-map>
+    </div>
+
+      
+    <div class="row row-content">
+        <div class="media" ng-repeat="company in companies">
+            <div class="media-left media-middle">
+                <a ui-sref="app.companydetails({id: company._id})">
+                    <img class="media-object img-thumbnail" ng-src={{company.image}}>
+                </a>
+            </div>
+            <div class="media-body">
+                <h2 class="media-heading">{{company.name}}</h2>
+                <p>{{company.description}}</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
